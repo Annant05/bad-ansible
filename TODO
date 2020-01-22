@@ -1,0 +1,2 @@
+access load balancer using -> 
+curl http://frontend1.02c0.example.opentlc.com

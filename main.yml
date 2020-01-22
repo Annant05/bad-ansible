@@ -83,30 +83,29 @@
       name: tomcat
       state: started
 
-- name: index.html on app 1
-  hosts: app1
-  gather_facts: false
-  become: true
+# - name: index.html on app 1
+#   hosts: app1
+#   gather_facts: false
+#   become: true
 
-  tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.app1
-      dest: /usr/share/tomcat/webapps/ansible/index.html
+#   tasks:
+#   - name: copy static index.html to tomcat webapps/ansible/index.html
+#     template:
+#       src: index.html.app1
+#       dest: /usr/share/tomcat/webapps/ansible/index.html
 
-- name: index.html on app 1
-  hosts: app2
-  gather_facts: false
-  become: true
+# - name: index.html on app 1
+#   hosts: app2
+#   gather_facts: false
+#   become: true
 
-  tasks:
-  - name: copy static index.html to tomcat webapps/ansible/index.html
-    template:
-      src: index.html.app2
-      dest: /usr/share/tomcat/webapps/ansible/index.html
+#   tasks:
+#   - name: copy static index.html to tomcat webapps/ansible/index.html
+#     template:
+#       src: index.html.app2
+#       dest: /usr/share/tomcat/webapps/ansible/index.html
 
 - name: deploy postgres
-  hosts: apps
   gather_facts: false
   become: true
   hosts: appdbs
@@ -136,20 +135,20 @@
       name: postgresql.service
       state: started
 
-- name: deploy apache
-  hosts: apps
-  gather_facts: false
-  become: true
-  hosts: apps
-  tasks:
-  - name: install apache
-    yum:
-      name: httpd
-      state: latest
-  - name: enable apache at boot
-    service:
-      name: httpd
-      enabled: yes
+# - name: deploy apache
+#   hosts: apps
+#   gather_facts: false
+#   become: true
+#   hosts: apps
+#   tasks:
+#   - name: install apache
+#     yum:
+#       name: httpd
+#       state: latest
+#   - name: enable apache at boot
+#     service:
+#       name: httpd
+#       enabled: yes
 #  - name: start apache
 #    service:
 #      name: httpd
