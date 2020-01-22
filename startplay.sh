@@ -1,0 +1,1 @@
+ansible-playbook main.yml -e "GUID=02c0"

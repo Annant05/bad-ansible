@@ -1,0 +1,1 @@
+ansible-playbook cleanup.yml -e "GUID=02c0"
