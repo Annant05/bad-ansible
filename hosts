@@ -15,3 +15,4 @@ appdbs
 
 [internal:vars]
 GUID="{{ lookup('env', 'GUID') }}"
+TOMCAT_PORT=8080
