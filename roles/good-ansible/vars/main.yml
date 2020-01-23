@@ -1,3 +1,0 @@
----
-# vars file for good-ansible
-TOMCAT_PORT: 8080
