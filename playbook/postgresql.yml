@@ -1,0 +1,14 @@
+- name: deploy postgres
+  gather_facts: false
+  become: true
+  hosts: appdbs
+  tasks:
+    - name: install postgres
+      yum:
+        name: postgresql-server
+        state: latest
+      notify: 
+        - enable postgresql at boot and start service
+
+  handlers:
+  - import_tasks: ../handlers/main.yml

@@ -19,3 +19,12 @@
   service:
     name: tomcat
     state: started
+
+# handlers for postgresql 
+- name: enable postgresql at boot and start service 
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+
+
