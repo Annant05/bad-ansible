@@ -1,0 +1,2 @@
+- import_playbook: playbook/configuration.yml
+- import_playbook: playbook/haproxy.yml
