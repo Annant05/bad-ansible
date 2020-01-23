@@ -1,3 +1,4 @@
+# handlers for HAproxy
 - name: start_HAproxy
   service:
     name: haproxy
@@ -7,3 +8,14 @@
   service:
     name: haproxy
     state: restarted
+
+# handlers for tomcat
+- name: enable tomcat at boot
+  service:
+    name: tomcat
+    enabled: yes
+
+- name: start tomcat
+  service:
+    name: tomcat
+    state: started

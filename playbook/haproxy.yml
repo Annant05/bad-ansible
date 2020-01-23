@@ -3,6 +3,9 @@
   gather_facts: false # remove later! speeds up testing
   become: true
 
+  vars_files:
+    - ../vars/main.yml
+
   tasks:
 
   - name: Install httpie and haproxy
